@@ -1,9 +1,9 @@
 import { v2 as cloudinary } from 'cloudinary';
 
 cloudinary.config({
-    cloud_name: 'dysfspuz5', 
-    api_key: '757499265279951', 
-    api_secret: 'R8PVn1VrFLOvz4OhI26l4FYRPjA'
+    cloud_name: 'dtayahlwe', 
+    api_key: '965352384418966', 
+    api_secret: '9yHA8wHlLzUITgNGcpwPLNFQPsI'
 
 });
 
