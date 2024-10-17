@@ -6,8 +6,8 @@ import { motion } from 'framer-motion'
 const locations = [
   {
     title: 'Main Branch',
-    address: 'Kozy Biotech , 25, City Plaza, Kayam Nagar , Bhojpur',
-    PinCode: '802314',
+    address: 'BISWANATH CHARIALI , SONITPUR ASSAM ',
+    PinCode: '784176',
   },
 ]
 
@@ -18,18 +18,7 @@ const users = [
       'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=600&w=600&ixid=eyJhcHBfaWQiOjE3Nzg0fQ',
     position: 'Marketing Lead',
   },
-  {
-    name: 'Victória Silva',
-    image:
-      'https://images.generated.photos/vBRCiI_3UM4l40sU8s7fCwbJwzDwRTGpebzPkfHFsY4/rs:fit:512:512/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/ODgyMTAyLmpwZw.jpg',
-    position: 'Back-end developer',
-  },
-  {
-    name: 'Sadie Lewis',
-    image:
-      'https://images.unsplash.com/photo-1485960994840-902a67e187c8?q=80&fm=jpg&crop=faces&fit=crop&h=600&w=600',
-    position: 'Sales',
-  },
+ 
 ]
 
 export default function AboutPageOne() {
