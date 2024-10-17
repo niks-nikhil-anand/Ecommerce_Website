@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 const locations = [
   {
-    title: 'Main Branch',
+    title: 'Address',
     address: 'BISWANATH CHARIALI , SONITPUR ASSAM ',
     PinCode: '784176',
   },
