@@ -291,7 +291,7 @@ const Navbar = () => {
 
         {/* Center - Logo */}
         <div className="flex justify-center relative z-50">
-          <h1 className="font-bold text-xl">BlushBelle</h1>
+          <h1 className="font-bold text-xl">JonoJivan</h1>
         </div>
 
         {/* Right Side - Icons */}
