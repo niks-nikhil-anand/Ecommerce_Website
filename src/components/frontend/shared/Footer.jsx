@@ -1,193 +1,85 @@
-"use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaYoutube, FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa';
-import { MdPhone, MdEmail } from 'react-icons/md';
-import { AiFillApple, AiFillAndroid } from 'react-icons/ai';
-import { IoLogoTwitter } from 'react-icons/io';
-import Image from 'next/image'; // Assuming you're using Next.js
-import logo from '../../../../public/annimatedIcons/grocery.png';
-import Link from 'next/link';
 
-export default function Footer() {
+const Footer = () => {
   return (
-    <div className="bg-black text-white py-10">
-      <div className="container mx-auto flex flex-col lg:flex-row justify-between items-start px-4 sm:px-6 lg:px-8">
-        <div className="mb-6 lg:mb-0 lg:w-1/4">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: 'spring', stiffness: 300 }}
-          >
-            <div className="flex items-center space-x-3">
-              <div className="bg-purple-800 p-2 rounded">
-                <Image src={logo} alt="Blush Belle" height={50} width={50} />
-              </div>
-              <div>
-                <h4 className="font-bold text-lg">JonoJivan Grocery</h4>
-                <p className="text-sm">
-                JonoJivan Grocery offers a full-service supermarket with everything consumers have come to expect from a grocer.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-          <div className="mt-4">
-            <div className="flex items-center space-x-3 mb-2">
-              <MdPhone className="h-6 w-6 text-white" />
-              <span>+91 8761873802</span>
-            </div>
-            <div className="flex items-center space-x-3">
-              <MdEmail className="h-6 w-6 text-white" />
-              <span>support@jonojivangrocery.com</span>
-            </div>
-          </div>
-          <div className="flex mt-4 space-x-3">
-            <motion.a
-              href="https://www.linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: 'spring', stiffness: 20 }}
-            >
-              <FaLinkedin className="h-8 w-8 text-white bg-purple-800 p-2 rounded-full" />
-            </motion.a>
-            <motion.a
-              href="https://www.youtube.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: 'spring', stiffness: 20 }}
-            >
-              <FaYoutube className="h-8 w-8 text-white bg-purple-800 p-2 rounded-full" />
-            </motion.a>
-          </div>
-        </div>
-
-        {/* Quick Links */}
-        <div className="mb-6 lg:mb-0 lg:w-1/4">
-          <h4 className="font-bold text-lg mb-3">Quick Links</h4>
-          <ul>
-            <motion.li
-              className="mb-2 hover:underline cursor-pointer"
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: 'spring', stiffness: 20 }}
-            >
-              Shops
-            </motion.li>
-            <motion.li
-              className="mb-2 hover:underline cursor-pointer"
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: 'spring', stiffness: 20 }}
-            >
-              Most Popular
-            </motion.li>
-            <Link href={"/blogs"}>
-              <motion.li
-                className="mb-2 hover:underline cursor-pointer"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: 'spring', stiffness: 20 }}
-              >
-                Blogs
-              </motion.li>
-            </Link>
-            <motion.li
-              className="mb-2 hover:underline cursor-pointer"
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: 'spring', stiffness: 20 }}
-            >
-              Contact
-            </motion.li>
+    <footer className="bg-gray-50 py-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+        
+        {/* Useful Links */}
+        <motion.div 
+          className="space-y-4"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h3 className="text-lg font-bold text-orange-500">Useful Links</h3>
+          <div className="w-16 h-1 bg-purple-600 mb-4"></div>
+          <ul className="space-y-2">
+            {['Shop', 'Contact', 'Blog', 'International Orders', 'International Distributors', 'About Us', 'Feedback'].map((link) => (
+              <li key={link} className="hover:underline cursor-pointer">{link}</li>
+            ))}
           </ul>
-        </div>
+        </motion.div>
 
-        {/* Company Info */}
-        <div className="mb-6 lg:mb-0 lg:w-1/4">
-          <h4 className="font-bold text-lg mb-3">Company</h4>
-          <ul>
-            <Link href={"/aboutUs"}>
-              <motion.li
-                className="mb-2 hover:underline cursor-pointer"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: 'spring', stiffness: 20 }}
-              >
-                About us
-              </motion.li>
-            </Link>
-            <Link href={"/returnPolicy"}>
-              <motion.li
-                className="mb-2 hover:underline cursor-pointer"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: 'spring', stiffness: 20 }}
-              >
-                Return Policy
-              </motion.li>
-            </Link>
-            <Link href={"/termsAndConditions"}>
-              <motion.li
-                className="mb-2 hover:underline cursor-pointer"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: 'spring', stiffness: 20 }}
-              >
-                Terms & Conditions
-              </motion.li>
-            </Link>
-            <Link href={"/privacyPolicy"}>
-              <motion.li
-                className="mb-2 hover:underline cursor-pointer"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: 'spring', stiffness: 20 }}
-              >
-                Privacy Policy
-              </motion.li>
-            </Link>
+        {/* Resources */}
+        <motion.div 
+          className="space-y-4"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <h3 className="text-lg font-bold text-orange-500">Resources</h3>
+          <div className="w-16 h-1 bg-purple-600 mb-4"></div>
+          <ul className="space-y-3">
+            {['Home', 'Shipping and Return Policies', '60-Day Satisfaction Guarantee', 'Privacy Policy', 'Terms of Use', 'CCPA Notice', 'Refer & Earn Program'].map((link) => (
+              <li key={link} className="hover:underline cursor-pointer">{link}</li>
+            ))}
           </ul>
-        </div>
+        </motion.div>
 
-        {/* Share Our Website */}
-        <div className="lg:w-1/4">
-          <h4 className="font-bold text-lg mb-3">Share Our Website</h4>
-          <div className="flex space-x-3">
-            <motion.a
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: 'spring', stiffness: 300 }}
+        {/* Subscription Form */}
+        <motion.div 
+          className="space-y-4"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          <h3 className="text-2xl font-bold text-black text-center">Get 15% Off</h3>
+          <p className="text-sm text-black font-medium text-center">Sign up to get 15% off your first order and other great promos, giveaways and news!</p>
+          
+          <form className="space-y-4">
+            <input 
+              type="text" 
+              placeholder="Name" 
+              className="w-full border border-black p-4 rounded-md focus:ring-2 "
+            />
+            <input 
+              type="email" 
+              placeholder="Email" 
+              className="w-full border border-black p-4 rounded-md focus:ring-2 "
+            />
+            <button 
+              type="submit" 
+              className="w-full bg-purple-600 text-white p-3 rounded-md font-bold shadow-lg hover:bg-purple-700"
             >
-              <FaInstagram className="h-12 w-12 text-white bg-purple-800 p-2 rounded-full" />
-            </motion.a>
-            <motion.a
-              href="https://www.facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: 'spring', stiffness: 300 }}
-            >
-              <FaFacebookF className="h-12 w-12 text-white bg-purple-800 p-2 rounded-full" />
-            </motion.a>
-            <motion.a
-              href="https://wa.me/"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: 'spring', stiffness: 300 }}
-            >
-              <FaWhatsapp className="h-12 w-12 text-white bg-purple-800 p-2 rounded-full" />
-            </motion.a>
-            <motion.a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: 'spring', stiffness: 300 }}
-            >
-              <IoLogoTwitter className="h-12 w-12 text-white bg-purple-800 p-2 rounded-full" />
-            </motion.a>
+              Subscribe
+            </button>
+          </form>
+        </motion.div>
+      </div>
+      <div className="mt-10 text-center text-sm text-black">
+        <p>Copyright © 2024, <a href="#" className="text-black underline">JonoJivan-Grocery Nutrition</a></p>
+        <div className="mt-4  p-4  flex justify-center items-center flex-col ">
+          <div className='md:w-[50rem] w-[20rem] rounded-lg border border-gray-200 px-5 md:py-8 py-5'>
+          <p className=' text-center'>50% OFF discount valid on fruits & vegetables at JonoJivanGrocery.in . Discount not applicable on repeating subscription orders. Discount automatically applied at checkout. Offer valid until 11/15/24 at 11:59 PM MST. Offer may be modified or terminated at any time. Exclusions apply.</p>
+          <p className="mt-2  text-center">**These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure or prevent any disease.</p>
           </div>
+         
         </div>
       </div>
-      <div className="mt-6 text-center border-t border-purple-700 pt-6 text-sm">
-        © 2024 All rights reserved by JonoJivan Grocery.
-      </div>
-    </div>
+    </footer>
   );
-}
+};
+
+export default Footer;
