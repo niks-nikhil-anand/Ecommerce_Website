@@ -1,5 +1,5 @@
 import connectDB from "@/lib/dbConnect";
-import ShippingPolicy from "@/models/(policyModels)/shippingPolicy"; // Renamed the import for clarity
+import shippingPolicy from "@/models/(policy)/shippingPolicy";
 import { NextResponse } from "next/server";
 
 export const POST = async (req) => {
@@ -18,7 +18,7 @@ export const POST = async (req) => {
       return NextResponse.json({ msg: "Please provide the shipping policy content." }, { status: 400 });
     }
 
-    await ShippingPolicy.updateOne({}, { $set: { content } }, { upsert: true });
+    await shippingPolicy.updateOne({}, { $set: { content } }, { upsert: true });
 
     console.log("Shipping policy updated successfully.");
     return NextResponse.json({ msg: "Shipping policy updated successfully" }, { status: 200 });
