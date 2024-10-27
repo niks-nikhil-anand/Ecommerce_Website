@@ -1,6 +1,11 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import Loader from '@/components/loader/loader';
+import Image from 'next/image';
+import DOMPurify from 'dompurify';
+import waveSvg from '../../../../../public/frontend/svgAssets/wave-white.svg';
+
 
 const Page = () => {
     const [data, setData] = useState(null); 
@@ -27,16 +32,15 @@ const Page = () => {
     }, []);
 
     if (loading) {
-        return (
-            <div className="flex items-center justify-center min-h-screen">
-                <div className="w-12 h-12 border-4 border-t-4 border-blue-500 rounded-full animate-spin"></div>
-            </div>
-        );
+        return <Loader />;
     }
 
     if (error) {
         return <div className="text-center text-red-500 text-lg p-4">Error: {error}</div>;
     }
+
+    // Sanitize the HTML content before rendering
+    const sanitizedContent = DOMPurify.sanitize(data.content);
 
     return (
         <motion.div
@@ -44,18 +48,32 @@ const Page = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="p-4 md:p-8 max-w-3xl md:max-w-4xl mx-auto bg-white rounded-lg shadow-lg"
+            className="w-full bg-white flex flex-col"
         >
-            <motion.div
-                initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-            >
-                <div className="prose prose-sm md:prose-lg mx-auto">
-                    <div dangerouslySetInnerHTML={{ __html: data?.content || '' }} />
-                    
-                </div>
-            </motion.div>
+            <div className='w-full bg-blue-500 h-[60vh] flex justify-center items-center relative'>
+                <h1 className='text-white md:text-6xl text-3xl text-center'>Terms And Condition </h1>
+            </div>
+
+            {/* Wave SVG */}
+            <div className="relative w-full overflow-hidden md:-mt-[4rem] -mt-[1rem]">
+                <Image 
+                    src={waveSvg} 
+                    alt="Wave"
+                    layout="responsive"
+                    objectFit="cover" 
+                    className="w-full"
+                    priority 
+                />
+            </div>
+
+            {/* Content */}
+            <div className="md:w-15/20 w-full px-4 md:px-12 mx-auto overflow-x-hidden">
+       <div 
+        className="prose md:prose-base prose-sm max-w-none text-gray-800"
+        dangerouslySetInnerHTML={{ __html: sanitizedContent }}
+    />
+     </div>
+
         </motion.div>
     );
 };

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Loader from '@/components/loader/loader';
-import waveSvg from '../../../../../public/frontend/SvgAssets/wave-white.svg';
+import waveSvg from '../../../../../public/frontend/svgAssets/wave-white.svg';
 import Image from 'next/image';
 import DOMPurify from 'dompurify';
 
