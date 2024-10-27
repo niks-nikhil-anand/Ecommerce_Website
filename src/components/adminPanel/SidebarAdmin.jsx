@@ -99,6 +99,9 @@ const SidebarAdmin = () => {
           <Link href="/admin/dashboard/policy/returnPolicy" passHref>
             <SidebarItem icon={<GrArticle />} label="Return Policy" isOpen={isOpen} />
           </Link>
+          <Link href="/admin/dashboard/policy/shippingPolicy" passHref>
+            <SidebarItem icon={<GrArticle />} label="Shipping & Delivery Policy" isOpen={isOpen} />
+          </Link>
           {isOpen && <h3 className="text-sm font-medium mt-4 mb-2 text-yellow-300">Account</h3>}
 
           <Link href="/admin/dashboard/profile" passHref>
