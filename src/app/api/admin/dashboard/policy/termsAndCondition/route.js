@@ -1,5 +1,5 @@
 import connectDB from "@/lib/dbConnect";
-import termsAndConditionsModels from "@/models/termsAndConditionsModels";
+import termsAndConditionsModels from "@/models/(policy)/termsAndConditionsModels";
 import { NextResponse } from "next/server";
 
 export const POST = async (req) => {
