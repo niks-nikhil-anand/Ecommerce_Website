@@ -38,11 +38,10 @@ export const GET = async (req) => {
     console.log("Connected to the database.");
 
     // Make sure the ID is in the correct format
-    const id = "66c2ee89450e15df7d725d40";
     
 
     // Fetch the privacy policy with the specific _id
-    const privacyPolicy = await privacyPolicyModels.findById(id);
+    const privacyPolicy = await privacyPolicyModels.findOne();
 
     if (!privacyPolicy) {
       return NextResponse.json({ msg: "Privacy policy not found" }, { status: 404 });
