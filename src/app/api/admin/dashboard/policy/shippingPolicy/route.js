@@ -34,7 +34,7 @@ export const GET = async (req) => {
     await connectDB();
     console.log("Connected to the database.");
 
-    const policy = await ShippingPolicy.findOne(); // Renamed variable to avoid conflict
+    const policy = await shippingPolicy.findOne(); // Renamed variable to avoid conflict
     console.log("Fetched shipping policy:", policy);
     return NextResponse.json(policy, { status: 200 });
   } catch (error) {
