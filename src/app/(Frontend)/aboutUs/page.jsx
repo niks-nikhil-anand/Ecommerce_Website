@@ -69,11 +69,10 @@ export default function AboutPageOne() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="flex flex-col space-y-3 md:w-2/4 lg:w-1/5"
+              className="flex flex-col space-y-3 md:w-2/4 lg:w-1/5 justify-start"
             >
               <FaMapMarkerAlt className="h-5 w-5" />
               <p className="w-full text-xl font-semibold text-gray-900">{location.title}</p>
-              <p className="w-full text-base text-gray-700">{location.timings}</p>
               <p className="text-sm font-medium">{location.address}</p>
             </motion.div>
           ))}
@@ -97,28 +96,6 @@ export default function AboutPageOne() {
             </p>
           </div>
         </motion.div>
-        {/* Team */}
-        <div className="grid grid-cols-1 gap-4 gap-y-6 border-b border-gray-300 py-12 pb-20 md:grid-cols-2 lg:grid-cols-4">
-          {users.map((user) => (
-            <motion.div
-              key={user.name}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="rounded-md border"
-            >
-              <img
-                src={user.image}
-                alt={user.name}
-                className="h-[300px] w-full rounded-lg object-cover"
-              />
-              <p className="mt-6 w-full px-2 text-xl font-semibold text-gray-900">{user.name}</p>
-              <p className="w-full px-2 pb-6 text-sm font-semibold text-gray-500">
-                {user.position}
-              </p>
-            </motion.div>
-          ))}
-        </div>
         {/* Hiring Banner */}
         <motion.div
           initial={{ opacity: 0 }}
